@@ -21,7 +21,7 @@ def filetime_hex_to_dec(filetime_hex_value:str, filetime_hex_ordering:str) -> in
 
     ordering_list={
         "le":"<Q", # A 8 bytes value in little endian
-        "ge":">Q" # A 8 bytes value in big endian
+        "be":">Q" # A 8 bytes value in big endian
     }
 
     filetime_b_hex_value=bytes.fromhex(filetime_hex_value)
