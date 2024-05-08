@@ -20,8 +20,8 @@ def filetime_hex_to_dec(filetime_hex_value:str, filetime_hex_ordering:str) -> in
     """
 
     ordering_list={
-        "le":">Q", # A 8 bytes value in little endian
-        "be":"<Q" # A 8 bytes value in big endian
+        "le":"<Q", # A 8 bytes value in little endian
+        "ge":">Q" # A 8 bytes value in big endian
     }
 
     filetime_b_hex_value=bytes.fromhex(filetime_hex_value)
@@ -50,13 +50,13 @@ if __name__ == "__main__":
 
     example_text = '''example:
 
-    Convert the filetime "01d7de4190a788eb" stored as an 8 Bytes hexadecimal litte-endian value to a human-readable date
-    python3 %(prog)s -o le -v "01d7de4190a788eb"
+    Convert the filetime "01d7de4190a788eb" stored as an 8 Bytes hexadecimal big-endian value to a human-readable date
+    python3 %(prog)s -o be -v "01d7de4190a788eb"
+
+    Convert the filetime "01d7de4190a788eb" stored as an 8 Bytes hexadecimal little-endian value to a human-readable date
+    python3 %(prog)s -o le -v "eb88a79041ded701"
 
     Convert the filetime "01d7de4190a788eb" stored as an 8 Bytes hexadecimal big-endian value to a human-readable date
-    python3 %(prog)s -o be -v "eb88a79041ded701"
-
-    Convert the filetime "01d7de4190a788eb" stored as an 8 Bytes hexadecimal litte-endian value to a human-readable date
     python3 %(prog)s -v "01d7de4190a788eb"
     '''
 
